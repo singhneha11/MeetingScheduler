@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#00aaaaaa"
+           android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+            <Button
+                android:text="PREV"
+                android:id="@+id/btn_prev"
+                android:layout_width="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="#fff"
+                android:gravity="left"
+                android:paddingTop="20dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_chevron_left"
+                android:layout_height="wrap_content"
+                android:textSize="16dp" />
+            <TextView
+                android:text="05/01/2020"
+                android:layout_width="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="#fff"
+                android:id="@+id/tv_date"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:background="@color/colorPrimary"
+                android:drawableRight="@drawable/ic_chevron_right"
+                android:gravity="right"
+                android:text="NEXT"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_margin="10dp"
+        android:layout_below="@id/toolbar">
+
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@id/rl"
+        android:textSize="16dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerView"
+
+       android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_scheduleMeeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="19dp"
+            android:background="@drawable/rounded_corner"
+            android:text="Schedule Company Meeting"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+    </RelativeLayout>
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+      android:gravity="bottom">
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prev"
+        android:textSize="12dp"/>
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next"
+            android:textSize="12dp"/>
+
+    </LinearLayout>-->
+</RelativeLayout>
